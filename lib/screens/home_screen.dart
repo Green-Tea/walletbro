@@ -18,25 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final picker = ImagePicker();
   int _currentIndex = 0;
   Set<String> uniqueBillerIDs = <String>{};
-  List<String> categories = [
-    "Electricity",
-    "Water",
-    "Spotify",
-    "Eat Out/Order",
-    "Drinks",
-    "Food Stalls",
-    "Snacks",
-    "Groceries",
-    "Motorbike",
-    "Taxi",
-    "Train/Bus",
-    "Utilities",
-    "Weed",
-    "Vape",
-    "Alcohol",
-    "Game Topup",
-    "Others"
-  ];
   late final List<String> _readBillers = [];
   List<String> _parsedText = [];
   String _billerId = "";
@@ -54,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await widget.storage.readBillerData().then((value) => setState(() {
           _billerData = value;
         }));
+    print(_billerData);
   }
 
   Future<void> processImageAndReadText() async {
